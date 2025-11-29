@@ -9,13 +9,13 @@
  .container { background:white; padding:20px; border-radius:8px; max-width:900px; margin:auto; box-shadow:0 0 10px rgba(0,0,0,0.1); }
  h1 { text-align:center; }
  h2 { margin-top:30px; border-bottom:2px solid #ddd; padding-bottom:5px; }
- img { max-width:100%; margin:10px 0; }
+ img { max-width:50%; display:block; margin:10px auto; border:2px solid #000; border-radius:6px; }
  .download-btn { padding:10px 18px; background:#007bff; color:white; border:none; border-radius:6px; cursor:pointer; }
 </style>
 </head>
 <body>
 <div class="container">
-<h1>Mathematics Paper 2 – Study Scope (Generated)</h1>
+<h1>Mathematics Paper 2 – Study Scope </h1>
 <p>This scope provides practice questions similar to the final exam, with diagrams and solutions.</p>
 
 <h2>1. Statistics</h2>
@@ -56,9 +56,20 @@ Simplify:<br>
 
 <button class="download-btn" onclick="downloadPDF()">Download as PDF</button>
 
+<button class="download-btn" onclick="downloadWord()">Download as Word</button>
+
 </div>
 <script>
 function downloadPDF(){ window.print(); }
+function downloadWord(){
+  const blob = new Blob([document.documentElement.outerHTML], { type: 'application/msword' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'Paper2_Scope.doc';
+  a.click();
+  URL.revokeObjectURL(url);
+}
 </script>
 </body>
 </html>
