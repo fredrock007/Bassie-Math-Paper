@@ -11,6 +11,13 @@
  h2 { margin-top:30px; border-bottom:2px solid #ddd; padding-bottom:5px; }
  img { max-width:50%; display:block; margin:10px auto; border:2px solid #000; border-radius:6px; }
  .download-btn { padding:10px 18px; background:#007bff; color:white; border:none; border-radius:6px; cursor:pointer; }
+  .section-block { page-break-inside: avoid; }
+  img { page-break-inside: avoid; }
+  @media print {
+    body { background:white; }
+    .container { border:8px double #000; box-shadow:none; }
+    h2, p, img { page-break-inside: avoid; }
+  }
 </style>
 </head>
 <body>
@@ -18,6 +25,7 @@
 <h1>Mathematics Paper 2 – Study Scope </h1>
 <p>This scope provides practice questions similar to the final exam, with diagrams and solutions.</p>
 
+<div class="section-block">
 <h2>1. Statistics</h2>
 <p><strong>Practice Question:</strong> The masses (in kg) of 12 athletes are:<br> 72, 80, 85, 87, 90, 92, 93, 95, 100, 104, 110, 118<br><br>
 1.1 Calculate the mean mass.<br>
@@ -53,6 +61,7 @@ Simplify:<br>
 <p>5.1 Prove ∠ABC = ∠BCA.<br>
 5.2 If AD is a tangent, determine ∠DAC.</p>
 <img src="Euclidean Geometry.png" alt="Euclidean Geometry Diagram" />
+</div>
 
 <button class="download-btn" onclick="downloadPDF()">Download as PDF</button>
 
